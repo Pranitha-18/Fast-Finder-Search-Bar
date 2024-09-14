@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('https://www.princeton.edu/sites/default/files/styles/half_1x_crop/public/images/2022/02/KOA_Nassau_2697x1517.jpg?itok=JIi_KPMe');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.search {
+  position: relative;
+  height: 50px;
+}
+
+.input {
+  background-color: white;
+  border: 0;
+  font-size: 18px;
+  padding: 15px;
+  height: 50px;
+  width: 0; /* Initially hidden */
+  opacity: 0; /* Initially invisible */
+  transition: width 0.4s ease, opacity 0.4s ease;
+}
+
+.btn {
+  background-color: white;
+  border: 0;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  transition: transform 0.4s ease;
+}
+
+.btn:focus, .input:focus {
+  outline: none;
+}
+
+.active .input {
+  width: 300px;  /* Expand the input when activated */
+  opacity: 1;  /* Make the input visible */
+}
+
+.active .btn {
+  transform: translateX(250px);  /* Adjust this to match the expanded input width */
+}
+
+/* Additional CSS for the Search Bar & Suggestions */
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  border: 2px solid #ccc;
+  opacity: 85%;
+  border-radius: 4px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.suggestions-list li {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: black;
+  position: absolute;
+  top: 0%;
+  left: 10%;
+}
